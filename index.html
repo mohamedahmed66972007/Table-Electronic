@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول إلكتروني</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="digitalClock"></div>
+    <h1>جدول الكتروني</h1>
+    
+    <div class="button-container">
+        <button id="addMaterialButton" onclick="addNewMaterial()">إضافة مادة جديدة</button>
+        <button id="resetButton" onclick="resetTable()">إعادة تعيين جدول</button>
+        <button id="showPendingButton" onclick="showPendingLessons()">عرض الدروس المؤجلة</button>
+    </div>
+    
+
+    <div id="currentMaterial"></div>
+    <div id="timer"></div>
+
+    <table id="lessonTable">
+        <thead>
+            <tr>
+                <th>المادة</th>
+                <th>الدروس</th>
+                <th>عدد الدقائق</th>
+                <th>المكافأة</th>
+                <th>بدء</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="pendingLessons">
+        <h2 id="pendingLessonsHeader" style="display:none;">الدروس المؤجلة</h2>
+        <table id="pendingTable">
+            <thead>
+                <tr>
+                    <th>المادة</th>
+                    <th>الدرس</th>
+                    <th>التاريخ</th>
+                    <th>إتمام</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="floatingModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; padding: 20px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); z-index: 1000; font-family: 'VIP Hala Bold'; text-align: center;">
+        <h3 id="modalTitle" style="color: #00796b; margin-bottom: 10px;">السؤال</h3>
+        <input id="modalInput" type="text" style="width: 90%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px;">
+        <div style="text-align: right;">
+            <button id="modalConfirmButton" style="padding: 8px 12px; background-color: #00796b; color: white; border: none; border-radius: 5px; cursor: pointer;">تأكيد</button>
+            <button id="modalCancelButton" style="padding: 8px 12px; background-color: #d32f2f; color: white; border: none; border-radius: 5px; cursor: pointer;">إلغاء</button>
+        </div>
+    </div>
+    <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
+    
+
+    <div class="alertBox" id="alertBox"></div>
+    <script src="script.js"></script> 
+</body>
+</html>
